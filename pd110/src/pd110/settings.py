@@ -28,6 +28,16 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+EMAIL_HOST = 'smtp@gmail.com'
+EMAIL_HOST_USER = 'j05yaya@gmail.com'
+EMAIL_HOST_PASSWORD = 'j100530c'
+EMAIL_PORT = 578
+EMAIL_USE_TLS = True
+
+'''
+Para usar gmail hay que usar hay que desbloquear captcha https://accounts.google.com/displayunlockcaptcha'''
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -119,3 +129,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_URL = '/media/'
+
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static_pro", "static"),
+    #'/var/www/static/',
+]
+
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_env", "static_root")
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_env", "media_root")
